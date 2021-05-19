@@ -1,16 +1,35 @@
-// https://forum.processing.org/two/discussion/comment/3361/#Comment_3361
+// Skrifttyper
+PFont arial;
 
-PShape usa;
+// Variabler for stand ting
+int defaultTextSize = 14;
+String[] allMenubarButtons = { "States", "Add" };
+
+// Objekter
+Menubar menubar;
 
 void setup() {
-  size(800, 800);
-  //surface.setTitle("Hello World!");
-  //surface.setResizable(true);
-  //surface.setLocation(100, 100);
+  size(1200, 800);
+  
+  // Program indstillinger
   smooth(8);
-  usa = loadShape("us-map.svg");
+  // pixelDensity(2);
+  rectMode(CENTER);
+  imageMode(CENTER);
+  
+  // Hent skrifttyper
+  arial = createFont("fonts/Arial.ttf", defaultTextSize);
+  textFont(arial);
 }
 
 void draw() {
-  shape(usa, 0, 0);
+  clear();
+  background(#003865);
+  
+  UI();
+}
+
+void UI() {
+  menubar = new Menubar((width/2), 25, width, 50, allMenubarButtons);
+  menubar.display();
 }
