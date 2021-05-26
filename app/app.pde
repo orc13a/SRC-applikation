@@ -23,7 +23,7 @@ void setup() {
   
   // Program indstillinger
   smooth(8);
-  //pixelDensity(2);
+  pixelDensity(2);
   rectMode(CENTER);
   imageMode(CENTER);
   
