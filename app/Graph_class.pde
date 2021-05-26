@@ -19,7 +19,19 @@ class Graph {
     coloumnX = coloumnX_;
     coloumnY = coloumnY_;
 
-    for (TableRow row : rawData.rows()) {
+    for (int i = 0; i < rawData.getRowCount() - 1; i++) {
+      if (i % 10 == 0) {
+        TableRow row = rawData.getRow(i);
+        
+        float pointX = this.x + (i * (w / rawData.getRowCount()));
+        float pointY = this.y - ((row.getInt(coloumnY) / (h * (h / 1.7))));
+        GraphPoint newPoint = new GraphPoint(pointX, pointY, 10, 10, row);
+        
+        allPoints.add(newPoint);
+      }
+    }
+
+    /*for (TableRow row : rawData.rows()) {
       if (rowNr % 10 == 0) {
         float pointX = this.x + (rowNr * (w / rawData.getRowCount()));
         float pointY = this.y - ((row.getInt(coloumnY) / (h * (h / 1.7))));
@@ -31,7 +43,7 @@ class Graph {
         allPoints.add(newPoint);
       }
       rowNr++;
-    }
+    }*/
   }
 
   void display() {

@@ -34,6 +34,15 @@ class GraphPoint {
       rectMode(CORNER);
       rect(infoX, infoY, infoW, infoH, 5, 5, 0, 5);
       rectMode(CENTER);
+       
+      textSize(20);
+      fill(darkBlue);
+      text(data.getString("date"), (infoX + (infoW/2)), (y - (infoH/4) * 3));
+      //textAlign(LEFT);
+      textSize(16);
+      text(data.getString("cases") + " cases", (infoX + (infoW/2)), (y - (infoH/4) * 2));
+      text(data.getString("deaths") + " deaths", (infoX + (infoW/2)), (y - (infoH/4) * 1));
+      //textAlign(CENTER);
     }
   }
   
