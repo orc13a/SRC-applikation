@@ -48,10 +48,8 @@ class GraphPoint {
   
   void mouseCheck() {
     if (mouseX >= (x - (w / 2)) && mouseX <= (x + (w / 2)) && mouseY >= (y - (w / 2)) && mouseY <= (y + (w / 2))) {
-      cursor(HAND);
       isHovering = true;
     } else {
-      cursor(ARROW);
       isHovering = false;
     }
   }

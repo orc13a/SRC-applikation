@@ -4,7 +4,6 @@ class Graph {
   float w;
   float h;
   Table rawData;
-  int rowNr = 1;
   String coloumnX;
   String coloumnY;
   ArrayList<GraphPoint> allPoints = new ArrayList<GraphPoint>();
@@ -30,20 +29,6 @@ class Graph {
         allPoints.add(newPoint);
       }
     }
-
-    /*for (TableRow row : rawData.rows()) {
-      if (rowNr % 10 == 0) {
-        float pointX = this.x + (rowNr * (w / rawData.getRowCount()));
-        float pointY = this.y - ((row.getInt(coloumnY) / (h * (h / 1.7))));
-        GraphPoint newPoint = new GraphPoint(pointX, pointY, 10, 10, row);
-      
-        //newPoint.x = this.x + (rowNr * (w / rawData.getRowCount()));
-        //newPoint.y = this.y - ((newPoint.data.getInt(coloumnY) / (h * (h / 1.7))));
-  
-        allPoints.add(newPoint);
-      }
-      rowNr++;
-    }*/
   }
 
   void display() {
